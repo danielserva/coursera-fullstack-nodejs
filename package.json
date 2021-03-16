@@ -1,0 +1,20 @@
+{
+  "name": "coursera-fullstack-nodejs",
+  "version": "1.0.0",
+  "description": "coursera-fullstack-nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielserva/coursera-fullstack-nodejs.git"
+  },
+  "author": "Daniel Serva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielserva/coursera-fullstack-nodejs/issues"
+  },
+  "homepage": "https://github.com/danielserva/coursera-fullstack-nodejs#readme"
+}
