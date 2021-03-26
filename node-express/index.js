@@ -13,7 +13,7 @@ const app = express();
 app.use(morgan('dev'));
 app.use(express.json());
 
-// parse various different custom JSON types as JSON
+// replace later
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use('/dishes', dishRouter);

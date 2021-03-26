@@ -1,5 +1,4 @@
 const express = require('express');
-
 const leaderRouter = express.Router();
 
 leaderRouter.use(express.json());
