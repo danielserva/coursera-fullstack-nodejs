@@ -1,14 +1,23 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
+var createError  = require('http-errors');
+var express      = require('express');
+var path         = require('path');
 var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+var logger       = require('morgan');
+const mongoose   = require('mongoose');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-const dishRouter = require('./routes/dishRouter');
-const promoRouter = require('./routes/promoRouter');
+var indexRouter    = require('./routes/index');
+var usersRouter    = require('./routes/users');
+const dishRouter   = require('./routes/dishRouter');
+const promoRouter  = require('./routes/promoRouter');
 const leaderRouter = require('./routes/leaderRouter');
+const Dishes       = require('./models/dishes');
+
+// const dbname = 'coursera-nodejs';
+const url = 'mongodb+srv://admin:Sopinh%401@cluster0.lfgfq.mongodb.net/coursera-nodejs';
+const connect = mongoose.connect(url,{ useNewUrlParser: true, useUnifiedTopology: true } );
+connect.then((db) => {
+  console.log("Connected correctly to server");
+}, (err) => { console.log(err); });
 
 var app = express();
 
