@@ -7,16 +7,14 @@ var FileStore    = require('session-file-store')(session);
 var passport     = require('passport');
 var authenticate = require('./authenticate');
 const mongoose   = require('mongoose');
-
+var config       = require('./config');
 var indexRouter    = require('./routes/index');
 var usersRouter    = require('./routes/users');
 const dishRouter   = require('./routes/dishRouter');
 const promoRouter  = require('./routes/promoRouter');
 const leaderRouter = require('./routes/leaderRouter');
-// const Dishes       = require('./models/dishes');
 
-// const dbname = 'coursera-nodejs';
-const url = 'mongodb+srv://admin:Sopinh%401@cluster0.lfgfq.mongodb.net/coursera-nodejs';
+const url     = config.mongoUrl;
 const connect = mongoose.connect(url,{ useNewUrlParser: true, useUnifiedTopology: true } );
 connect.then((db) => {
   console.log("Connected correctly to server");
