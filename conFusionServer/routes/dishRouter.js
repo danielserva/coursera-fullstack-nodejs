@@ -17,6 +17,7 @@ dishRouter.route('/')
     .catch((err) => next(err));
 })
 .post(authenticate.verifyUser, (req, res, next) => {
+    console.log('Request body: ', req.body);
     Dishes.create(req.body)
     .then((dish) => {
         console.log('Dish Created ', dish);
