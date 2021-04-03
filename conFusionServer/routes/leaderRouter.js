@@ -1,6 +1,6 @@
 const express      = require('express');
 const mongoose     = require('mongoose');
-var authenticate   = require('./authenticate');
+var authenticate   = require('../authenticate');
 const Leaders      = require('../models/leaders');
 const leaderRouter = express.Router();
 

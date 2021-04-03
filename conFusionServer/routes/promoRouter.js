@@ -1,6 +1,6 @@
 const express     = require('express');
 const mongoose    = require('mongoose');
-var authenticate  = require('./authenticate');
+var authenticate  = require('../authenticate');
 const Promotions  = require('../models/promotions');
 const promoRouter = express.Router();
 
