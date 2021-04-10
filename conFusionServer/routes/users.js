@@ -2,13 +2,15 @@ var express      = require('express');
 var router       = express.Router();
 var passport     = require('passport');
 var authenticate = require('../authenticate');
-var UserModel         = require('../models/user');
+const cors       = require('./cors');
+var UserModel    = require('../models/user');
 
 router.use(express.json());
 
 /* GET users listing. */
 router.route('/')
-.get(authenticate.verifyUser, authenticate.verifyAdmin, function(req, res, next) {
+.options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
+.get(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, function(req, res, next) {
   UserModel.find({})
   .then((user) => {
       res.statusCode = 200;
